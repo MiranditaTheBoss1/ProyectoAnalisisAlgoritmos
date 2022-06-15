@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadisticas</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body style="background-color: #6ECFB0;">
+
+    <b style="margin-left: 20px; margin-top: 20px;">TABLA CON DATOS DE TODOS LOS USUARIOS</b>
+
+    <table style="background-color: #40BF6F; border-spacing: 20px; margin: 20px; border-spacing: 10px; text-align: center; border: black  5px solid;">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Intentos Primer nivel</th>
+                <th>Intentos Segundo nivel</th>
+                <th>Intentos Tercer nivel</th>
+                <th>Intentos Cuarto nivel</th>
+                <th>Intentos Quinto nivel</th>
+
+                <th>Puntaje Primer nivel</th>
+                <th>Puntaje Segundo nivel</th>
+                <th>Puntaje Tercer nivel</th>
+                <th>Puntaje Cuarto nivel</th>
+                <th>Puntaje Quinto nivel</th>
+                <th>Total Puntaje</th>
+
+                <th>Satisfacción Primer nivel</th>
+                <th>Satisfacción Segundo nivel</th>
+                <th>Satisfacción Tercer nivel</th>
+                <th>Satisfacción Cuarto nivel</th>
+                <th>Satisfacción Quinto nivel</th>
+            </tr>
+        </thead>
+        <tbody id="con">
+        </tbody>
+    </table>
+    <b style="margin-left: 20px;">PROMEDIO GLOBAL DE PUNTAJE PARA CADA PREGÚNTA DEL TEST</b>
+    <p id="promedioCadaPreguntaTest" style="margin-left: 40px; line-height: 30px;"> </p>
+
+    <b style="margin-left: 20px;">PROMEDIO GLOBAL DE INTENTOS PARA CADA NIVEL</b>
+    <p id="promedioIntentosTest" style="margin-left: 40px; line-height: 30px;"> </p>
+
+    <b style="margin-left: 20px;">PROMEDIO GLOBAL DE PUNTUACIÓN PARA CADA PREGÚNTA DE OPINIÓN</b>
+    <p id="promedioCadaPreguntaOpinion" style="margin-left: 40px; line-height: 30px;"> </p>
+
+    <b style="margin-left: 20px;">CANTIDAD DE FALLOS POR NIVEL</b>
+    <p id="cantidadFallosPorNivel" style="margin-left: 40px; line-height: 30px;"> </p>
+
+    <b style="margin-left: 20px;">TABLA DE ESTUDIANTES ORDENADA EN BASE AL PUNTAJE (MAYOR A MENOR PUNTAJE)</b>
+    <p id="cantidadFallosPorNivel" style="margin-left: 40px; line-height: 30px;"> </p>
+
+    <table style="background-color: #40BF6F; border-spacing: 20px; margin: 20px; border-spacing: 10px; text-align: center; border: black  5px solid;">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Puntaje Primer nivel</th>
+                <th>Puntaje Segundo nivel</th>
+                <th>Puntaje Tercer nivel</th>
+                <th>Puntaje Cuarto nivel</th>
+                <th>Puntaje Quinto nivel</th>
+                <th>Total Puntaje</th>
+            </tr>
+        </thead>
+        <tbody id="conOrdenado">
+        </tbody>
+    </table>
+
+
+    <b style="margin-left: 20px;">TABLA DE ESTUDIANTES ORDENADA EN BASE AL PUNTAJE (MENOR A MAYOR)</b>
+    <p id="cantidadFallosPorNivel" style="margin-left: 40px; line-height: 30px;"> </p>
+
+    <table style="background-color: #40BF6F; border-spacing: 20px; margin: 20px; border-spacing: 10px; text-align: center; border: black  5px solid;">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Puntaje Primer nivel</th>
+                <th>Puntaje Segundo nivel</th>
+                <th>Puntaje Tercer nivel</th>
+                <th>Puntaje Cuarto nivel</th>
+                <th>Puntaje Quinto nivel</th>
+                <th>Total Puntaje</th>
+            </tr>
+        </thead>
+        <tbody id="conOrdenadoMenor">
+        </tbody>
+    </table>
+
+    <form id="coeficiente">
+        <div class="pregunta" style="margin-left: 20px">
+            5. ¿Cual pregunta del test?<br />
+        </div>
+        <div class=" respuestas " style="margin-left: 20px">
+            <select name="color" id="nivel">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="pregunta" style="margin-left: 20px;">
+            5. ¿Cual pregunta de la encuesta?<br />
+        </div>
+        <div class=" respuestas " style="margin-left: 20px; ">
+            <select name="color " id="pregunta">
+                <option value="1 ">1</option>
+                <option value="2 ">2</option>
+                <option value="3 ">3</option>
+                <option value="4 ">4</option>
+                <option value="5 ">5</option>
+            </select>
+        </div>
+        <button style="background-color: #A8E2F2;width: 100px; border-color: #733F7F; margin-top: 10px; margin-left: 20px;" onclick=" ">Calcular coeficiente de correlación</button>
+    </form>
+    <b id="resultado" style="margin-top: 20px; margin-left: 20px;"> </b>
+</body>
+
+</html>
+
+<script type="module" src="./proceso.js "></script>

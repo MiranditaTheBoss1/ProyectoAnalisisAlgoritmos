@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Analisis de Algoritmos</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body style="background-color: #6ECFB0;">
+
+    <div id="general">
+        <div id="botones">
+            <h1 id="mundo" style="margin-top: 10px; margin-left: 10px"></h1>
+
+            <button style="background-color: #A8E2F2;margin-top: 10px;width: 100px;margin-left: 10px; border-color: #733F7F ; " onclick="izquierda(); ">Izquierda</button>
+            <button style="background-color: #A8E2F2;margin-top: 10px;width: 100px; border-color: #733F7F " onclick="derecha(); ">Derecha</button>
+            <button style="background-color: #A8E2F2;margin-top: 10px;width: 100px; border-color: #733F7F " onclick="arriba(); ">Arriba</button>
+            <button style="background-color: #A8E2F2;margin-top: 10px;width: 100px; border-color: #733F7F " onclick="abajo(); ">Abajo</button>
+        </div>
+        <div>
+            <button style="background-color: #A8E2F2;width: 100px; border-color: #733F7F; margin-left: 500px;" onclick="ejecuting();">Ejecutar</button>
+        </div>
+
+        <div>
+            <script src="../p5.js"></script>
+            <script src="visualizar.js"></script>
+        </div>
+
+        <div id="listaMov" style="background-color: #40BF6F;">
+            <div id="titulo">
+                <h4> lista de movimientos: </h5>
+            </div>
+            <div id="listado">
+                <scroll-container>
+                    <scroll-page id="listaMovimiento" style="text-align: left;"></scroll-page>
+                </scroll-container>
+            </div>
+        </div>
+
+        <div id="puntajes" style="background-color: #40BF6F;">
+            <div id="valores">
+                <b id="puntajeNivel1"></b>
+                <p id="intentosNivel1"></p>
+                <p>----------------------------------------------------------------------------</p>
+                <b id="puntajeNivel2"></b>
+                <p id="intentosNivel2"></p>
+                <p>----------------------------------------------------------------------------</p>
+                <b id="puntajeNivel3"></b>
+                <p id="intentosNivel3"></p>
+                <p>----------------------------------------------------------------------------</p>
+                <b id="puntajeNivel4"></b>
+                <p id="intentosNivel4"></p>
+                <p>----------------------------------------------------------------------------</p>
+                <b id="puntajeNivel5"></b>
+                <p id="intentosNivel5"></p>
+            </div>
+        </div>
+        <div id="encuesta" style="background-color: #40BF6F;">
+            <form id="encu">
+                <b style="border-top: 10px; border-left: 20px;">ENCUESTA DE SATISFACCIÓN</b>
+
+                <div id="preguntas">
+                    <br/>
+                    <div class="pregunta">
+                        ¿Cúal es tú nombre?
+                        <input type="text" id="name" name="name" required minlength="1" size="20">
+                    </div>
+                    <br/>
+                    <div class="pregunta">
+                        1. ¿Que tan dificil del 1(fácil) al 5(dificil) le pareció el Primer nivel?<br />
+                    </div>
+                    <select name="color" style="width: 50px; margin-bottom: 20px;" id="pregunta1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    <div class="pregunta">
+                        2. ¿Que tan dificil del 1 (fácil) al 5(dificil) le pareció el Segundo nivel?<br />
+                    </div>
+                    <div class="respuestas">
+                        <select name="color" style="width: 50px; margin-bottom: 20px;" id="pregunta2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select></div>
+                    <div class="pregunta">
+                        3. ¿Que tan dificil del 1 (fácil) al 5(dificil) le pareció el Tercer nivel?<br />
+                    </div>
+                    <div class="respuestas">
+                        <select name="color" style="width: 50px; margin-bottom: 20px;" id="pregunta3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select></div>
+                    <div class="pregunta">
+                        4. ¿Que tan dificil del 1 (fácil) al 5(dificil) le pareció el Cuarto nivel?<br />
+                    </div>
+                    <div class="respuestas">
+                        <select name="color" style="width: 50px; margin-bottom: 20px;" id="pregunta4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        <div class="pregunta">
+                            5. ¿Que tan dificil del 1 (fácil) al 5(dificil) le pareció el Quinto nivel?<br />
+                        </div>
+                        <div class="respuestas">
+                            <select name="color" style="width: 50px; margin-bottom: 20px;" id="pregunta5">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                            <p>
+
+                            </p>
+                            <button style="background-color: #A8E2F2;width: 100px; border-color: #733F7F; margin-top: 10px; " onclick=" ">Enviar respuestas</button>
+                        </div>
+            </form>
+            </div>
+            </div>
+</body>
+<script type="module" src="./formulario.js"></script>
